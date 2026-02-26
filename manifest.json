@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "SnipHarvest",
+  "version": "0.1.0",
+  "description": "Capture and organize text snippets from web pages",
+  "permissions": ["storage", "contextMenus"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content/content-script.js"],
+    "css": ["content/content-styles.css"]
+  }],
+  "action": {
+    "default_popup": "popup/popup.html"
+  }
+}

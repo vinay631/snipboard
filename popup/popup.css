@@ -1,0 +1,191 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  width: 400px;
+  min-height: 600px;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  color: #1a1a2e;
+  background: #fff;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+
+.sh-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 10;
+}
+
+#search {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+#search:focus { border-color: #6366f1; }
+
+/* ── List ────────────────────────────────────────────────────────────────── */
+
+.sh-list { padding: 8px; }
+
+.sh-empty {
+  padding: 48px 16px;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ── Snippet card ────────────────────────────────────────────────────────── */
+
+.sh-card {
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.sh-card:hover { border-color: #6366f1; background: #f9f9ff; }
+
+.sh-card-preview {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.sh-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.sh-favicon { flex-shrink: 0; border-radius: 2px; }
+.sh-card-title { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sh-card-date { flex-shrink: 0; }
+
+mark { background: #fef08a; border-radius: 2px; padding: 0 1px; }
+
+/* ── Pagination ──────────────────────────────────────────────────────────── */
+
+.sh-pager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  font-size: 13px;
+}
+.sh-pager button {
+  padding: 4px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+.sh-pager button:disabled { opacity: 0.4; cursor: default; }
+
+/* ── Detail overlay ──────────────────────────────────────────────────────── */
+
+.sh-detail {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 16px;
+  overflow-y: auto;
+  z-index: 100;
+}
+.sh-detail.hidden { display: none; }
+
+.sh-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sh-detail-text {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.sh-context {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+.sh-context summary { cursor: pointer; font-weight: 500; color: #374151; margin-bottom: 6px; }
+
+.sh-detail-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+.sh-detail-url { color: #6366f1; text-decoration: none; word-break: break-all; }
+.sh-detail-url:hover { text-decoration: underline; }
+.sh-detail-ts { color: #9ca3af; }
+
+.sh-detail-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.sh-btn {
+  padding: 6px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+}
+.sh-btn:hover { background: #f3f4f6; }
+.sh-btn-danger { color: #ef4444; border-color: #fca5a5; }
+.sh-btn-danger:hover { background: #fef2f2; }
+
+.sh-edit-area {
+  display: block;
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  border: 1px solid #6366f1;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  line-height: 1.6;
+  resize: vertical;
+  margin-top: 8px;
+  outline: none;
+}

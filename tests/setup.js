@@ -21,3 +21,16 @@ Object.defineProperty(globalThis, 'crypto', {
   writable: true,
   configurable: true,
 });
+
+// Simulates importScripts() in service worker — no-op in test env
+global.importScripts = jest.fn();
+
+// SnipStorage mock used by service-worker tests
+// (storage.test.js requires the real module directly and overwrites this)
+global.SnipStorage = {
+  getAll: jest.fn(),
+  save: jest.fn(),
+  remove: jest.fn(),
+  update: jest.fn(),
+  buildSnippet: jest.fn(),
+};
